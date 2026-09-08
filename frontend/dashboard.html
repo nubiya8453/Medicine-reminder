@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Medicine Reminder System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="dashboard.html" class="navbar-brand">
+      💊 Medicine Reminder System
+    </a>
+    <div class="nav-actions">
+      <span id="userGreeting" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main);">Welcome!</span>
+      <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="card card-wide">
+      <h2 class="card-title" style="text-align: left;">Medicine Recommender & Scheduler</h2>
+      <p class="card-subtitle" style="text-align: left;">Enter patient details and disease to generate an automated dosage recommendation and reminder schedule.</p>
+
+      <div id="alertBox" class="alert"></div>
+
+      <form id="recommendForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="patientName">Patient Name</label>
+            <input type="text" id="patientName" class="form-control" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="patientEmail">Patient Email</label>
+            <input type="email" id="patientEmail" class="form-control" placeholder="patient@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="patientAge">Age</label>
+            <input type="number" id="patientAge" class="form-control" placeholder="e.g. 35" min="1" max="120" required>
+          </div>
+
+          <div class="form-group">
+            <label for="patientGender">Gender</label>
+            <select id="patientGender" class="form-control" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="patientDisease">Disease / Condition</label>
+          <input type="text" id="patientDisease" class="form-control" placeholder="e.g. Fever, Diabetes, Hypertension..." required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Generate Recommendation & Send Email</button>
+      </form>
+
+      <!-- Recommendation Output Result -->
+      <div id="resultCard" class="result-card">
+        <h3>🩺 Prescription & Schedule Details</h3>
+        
+        <div class="result-item">
+          <strong>Condition:</strong>
+          <span id="resDisease">N/A</span>
+        </div>
+
+        <div class="result-item">
+          <strong>Recommended Medicine:</strong>
+          <span id="resMedicine" style="color: var(--primary); font-weight: 700;">N/A</span>
+        </div>
+
+        <div class="result-item">
+          <strong>Dosage:</strong>
+          <span id="resDosage">N/A</span>
+        </div>
+
+        <div class="result-item">
+          <strong>Schedule / Timing:</strong>
+          <span id="resTiming" class="badge">N/A</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Medicine Reminder System. All rights reserved.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

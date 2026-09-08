@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Reminder - Login & Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="navbar-brand">
+      💊 Medicine Reminder System
+    </a>
+  </header>
+
+  <main class="main-container">
+    <div class="card">
+      <h2 class="card-title">Welcome</h2>
+      <p class="card-subtitle">Sign in or create an account to manage medicine schedules</p>
+
+      <div id="alertBox" class="alert"></div>
+
+      <div class="tabs">
+        <button id="loginTab" class="tab-btn active">Sign In</button>
+        <button id="registerTab" class="tab-btn">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUsername">Username or Email</label>
+          <input type="text" id="loginUsername" class="form-control" placeholder="Enter username or email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" placeholder="Enter password" required>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 1rem;">
+          <a href="forgot_password.html" style="font-size: 0.85rem; color: var(--primary); text-decoration: none;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label for="regUsername">Username</label>
+          <input type="text" id="regUsername" class="form-control" placeholder="Choose a username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" class="form-control" placeholder="Create a strong password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Medicine Reminder System. All rights reserved.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
